@@ -41,7 +41,6 @@ int binary_search(std::vector<int> v, int a)
 int main()
 {
 
-  // Read the File
   std::ifstream testSizeFile;
   int testSize;
   testSizeFile.open("testCaseSize.txt");
@@ -56,28 +55,19 @@ int main()
   }
 
   std::cout << "Test Size: " << testSize << std::endl;
-  // Parse the File
   int arr;
 
-  // Assuming the file is named "numbers.txt"
   std::ifstream file("searchTestCase.txt");
 
-  std::vector<int> numbers; // Vector to store the numbers
+  std::vector<int> numbers; 
   int number;
 
-  // Read numbers from the file until end-of-file
   while (file >> number)
   {
     numbers.push_back(number);
   }
 
-  file.close(); // Close the file
-
-  // Compute
-  // for (int i = 0; i < numbers.size() + 1; i++)
-  // {
-  //   std::cout << numbers[i] << " ";
-  // }
+  file.close(); 
   int ele;
   std::cin >> ele;
 
@@ -93,7 +83,6 @@ int main()
   std::cout << "L   " << ele << " " << rL << " " << tEnd << std::endl;
   std::cout << "B   " << ele << " " << rB << " " << tEnd << std::endl;
 
-  // Time Setup
   std::ofstream linearFile("linearSearchResult.txt");
   linearFile << "Input Pos Time (s)" << std::endl;
   for (int i; i < nums.size(); i++)
