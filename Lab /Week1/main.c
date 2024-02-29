@@ -34,10 +34,9 @@ int main() {
     }
 
     fclose(file);
-
-    display(stack);
-    printf("\n");
     
+    display(stack);
+
     while (stack.pointer != -1) {
         pop(&stack);
     }
@@ -49,14 +48,14 @@ void push(STACK *stack, STUDENT student) {
     if (stack->pointer == CAPACITY - 1) {
         printf("Stack Overflow\n");
     } else {
-        stack->pointer++;
         stack->data[stack->pointer] = student;
+        stack->pointer++;
     }
 }
 
 void pop(STACK *stack) {
     printf("Popped Record: ID: %s, Name: %s, DOB: %s, CGPA: %.2f\n", stack->data[stack->pointer].id, stack->data[stack->pointer].name,stack->data[stack->pointer].dob, stack->data[stack->pointer].cgpa);
-    stack->pointer--;    
+    stack->pointer--;
 }
 
 void display(STACK stack) {
@@ -72,5 +71,6 @@ void display(STACK stack) {
     for (int i = stack.pointer; i >= 0; i--) {
         printf("ID: %s, Name: %s, DOB: %s, CGPA: %.2f\n", stack.data[i].id, stack.data[i].name, stack.data[i].dob, stack.data[i].cgpa);
         fprintf(file, "ID: %s, Name: %s, DOB: %s, CGPA: %.2f\n", stack.data[i].id, stack.data[i].name, stack.data[i].dob, stack.data[i].cgpa);
-    }
+    }
+    printf("\n");
 }
