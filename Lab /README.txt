@@ -9,5 +9,3 @@ the order being followed for P4 is as follows:
 7. week-6
 8. week-7
 9. week-8
-10. week-9
-11. week-10
